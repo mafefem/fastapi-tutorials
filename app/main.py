@@ -1,9 +1,9 @@
 
 from fastapi import FastAPI
 from . import models
-from .database import engine
+# from .database import engine
 from .routers import post, user, auth, vote
-from .config import settings
+# from .config import settings
 from fastapi.middleware.cors import CORSMiddleware
 
 
@@ -27,5 +27,5 @@ app.include_router(auth.router)
 app.include_router(vote.router)
 
 @app.get("/") #Decorator of get method to reference a path
-async def root(): # Async is used for synchronazing 
+def root(): # Async is used for synchronazing 
     return {"message": "welcome to my API..."}
