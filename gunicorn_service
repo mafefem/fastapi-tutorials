@@ -1,0 +1,15 @@
+[Unit]
+Description=Demo for FastAPI app
+After=network.target
+
+[Service]
+User=mafefe-fastapi
+Group=mafefe-fastapi
+WorkingDirectory=/home/mafefe-fastapi/app/src/
+Environment="PATH=/home/mafefe-fastapi/app/venv/bin"
+EnvironmentFile=/home/mafefe-fastapi/.env
+ExecStart=/home/mafefe-fastapi/app/venv/bin/gunicorn -w 2 -k uvicorn.workers.UvicornWorker app.main:app --preload -b 0.0.0.0:8000
+
+[Install]
+WantedBy=multi-user.target
+
