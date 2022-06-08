@@ -28,4 +28,4 @@ app.include_router(vote.router)
 
 @app.get("/") #Decorator of get method to reference a path
 def root(): # Async is used for synchronazing 
-    return {"message": "Welcome to my API..."}
+    return {"message": "Welcome to my API!..."}
