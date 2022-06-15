@@ -13,7 +13,8 @@ jobs:
           host: ${{secrets.PROD_HOST}}
           username: ${{secrets.PROD_USERNAME}}
           password: ${{secrets.PROD_PASSWORD}}
-
+          port: ${{secrets.PROD_PORT}}
+          key: ${{secrets.PROD_KEY}}
 
           script: |
             cd app/src
