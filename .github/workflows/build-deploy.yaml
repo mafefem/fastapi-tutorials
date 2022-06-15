@@ -3,7 +3,8 @@ name: Build and Deploy Code
 on: [push, pull_request]
 
 jobs:
-  job1:
+  build:
+    name: Build
     runs-on: ubuntu-latest
     steps:
       - name: deploy to ubuntu server
@@ -12,6 +13,7 @@ jobs:
           host: ${{secrets.PROD_HOST}}
           username: ${{secrets.PROD_USERNAME}}
           password: ${{secrets.PROD_PASSWORD}}
+
           script: |
             cd app/src
             git pull 
