@@ -4,7 +4,7 @@ on: [push, pull_request]
 
 jobs:
   job1:
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-latest
     steps:
       - name: deploy to ubuntu server
         uses: appleboy/ssh-action@master
@@ -16,7 +16,7 @@ jobs:
             cd app/src
             git pull 
             sudo systemctl restart fastapi 
-            
+
             
             
 
