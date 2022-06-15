@@ -6,6 +6,19 @@ jobs:
   job1:
     runs-on: ubuntu-22.04
     steps:
-      - name: pulling git repo
-        uses: actions/checkout@v2
+      - name: deploy to ubuntu server
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{secrets.PROD_HOST}}
+          username: ${{secrets.PROD_USERNAME}}
+          password: ${{secrets.PROD_PASSWORD}}
+          script: |
+            cd app/src
+            git pull 
+            sudo systemctl restart fastapi 
+            
+            
+            
+
+
  
